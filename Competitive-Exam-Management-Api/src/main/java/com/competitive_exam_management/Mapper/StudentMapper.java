@@ -8,11 +8,13 @@ import com.competitive_exam_management.Entity.StudentEntity;
 import com.competitive_exam_management.Entity.UserEntity;
 @Component
 public class StudentMapper {
+	
 	 public UserEntity toEntity1(StudentDto studentDto) {
 	        if (studentDto == null) {
 	            return null;
 	        }
 	        UserEntity entity = new UserEntity();
+	        entity.setId(studentDto.getId());
 	        entity.setUsername(studentDto.getName());
 	        entity.setContact_number(studentDto.getContactNumber());
 	        entity.setEmail(studentDto.getEmail());
@@ -27,6 +29,7 @@ public class StudentMapper {
 		            return null;
 		        }
 			 StudentEntity entity = new StudentEntity();
+			    entity.setId(studentDto.getId());
 		        entity.setName(studentDto.getName());
 		        entity.setEmail(studentDto.getEmail());
 		        entity.setPassword(studentDto.getPassword());

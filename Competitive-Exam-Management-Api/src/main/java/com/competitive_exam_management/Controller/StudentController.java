@@ -37,7 +37,7 @@ public class StudentController {
 	   @PostMapping("/student_update")
 	    public String StudentUpdate(@RequestBody StudentDto studentDto) {
 		    boolean success=servicesImpl.studentUpdate(studentDto);
-		  System.out.println("Success");
+		 // System.out.println(studentDto.getId());
 		 return "student_view";
 	      
 	    }
@@ -45,16 +45,12 @@ public class StudentController {
 	   
 	   
 	   @GetMapping("/student_view")
-	    public List<StudentRespDto> fetchAllStudents() { 
-		   List<StudentRespDto> students = servicesImpl.getAllStudents();
-
-		    for (StudentRespDto student : students) {
-		        System.out.println("Student ID: " + student.getName());
-		        
-		    }
-
-		    return students;
-	        
+	    public List<StudentRespDto> fetchAllStudents() {
+	        List<StudentRespDto> students = servicesImpl.getAllStudents();
+//	        for (StudentRespDto student : students) {
+//	            System.out.println("Student Name: " + student.getName());
+//	        }
+	        return students;
 	    }
 	   
 	   @GetMapping("/student_update/{id}")
@@ -63,6 +59,14 @@ public class StudentController {
 		   StudentRespDto studentRespDto=servicesImpl.getDataById(id);
 		   System.out.println(studentRespDto.getEmail());
 		return studentRespDto;
+ }
+	   
+	   @GetMapping("/student_delete/{id}")
+	   public boolean deletebyid(@PathVariable int id) {
+		   System.out.println(id);
+		   boolean success=servicesImpl.deleteById(id);
+		
+		return success;
  }
 	}
 

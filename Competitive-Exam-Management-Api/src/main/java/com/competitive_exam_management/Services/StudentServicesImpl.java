@@ -32,6 +32,7 @@ public class StudentServicesImpl implements StudentInterface{
 	
 	@Override
 	 public boolean studentRegistration(StudentDto studentDto) {
+		System.out.println(studentDto.getId());
 		    StudentEntity student = mapper.toEntity(studentDto); 
 		    UserEntity user = mapper.toEntity1(studentDto);
 		    userRepository.save(user); 
@@ -42,10 +43,10 @@ public class StudentServicesImpl implements StudentInterface{
 	
 	@Override
 	public List<StudentRespDto> getAllStudents() {
-	    List<StudentEntity> entities = studentRepository.findAll();
-	    return entities.stream()
-	                   .map(mapper::toDto)  
-	                   .collect(Collectors.toList());  
+		 List<StudentEntity> entities = studentRepository.findAll();
+	        return entities.stream()
+	                       .map(mapper::toDto)
+	                       .collect(Collectors.toList());
 	}
 
 	@Override
@@ -61,9 +62,17 @@ public class StudentServicesImpl implements StudentInterface{
 
 	public boolean studentUpdate(StudentDto studentDto) {
 	    StudentEntity student = mapper.toEntity(studentDto); 
+	  
 	    UserEntity user = mapper.toEntity1(studentDto);
+	    System.out.println(user.getId());
 	    userRepository.save(user); 
 	    studentRepository.save(student);
+	    return true; 
+	}
+
+
+	public boolean deleteById(int id) {
+	    studentRepository.deleteById(id);
 	    return true; 
 	}
 }
