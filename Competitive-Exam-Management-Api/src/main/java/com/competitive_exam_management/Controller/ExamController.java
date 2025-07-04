@@ -25,7 +25,6 @@ public class ExamController {
 	@PostMapping("/registerExam")
 	public String registerExam(@RequestBody ExamDto examDto ) {
 		boolean exam = examInterface.registerExam(examDto);
-		
 		return "done";
 		}
 	
