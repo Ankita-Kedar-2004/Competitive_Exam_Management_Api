@@ -35,24 +35,27 @@ public class UserServiceImpl implements UserInterface {
      @Override
 	public boolean userDto(UserDto userDto) {
 		UserEntity user=mapper.toEntity(userDto);
-		System.out.println(user.getEmail());
-		System.out.println("hello i  am ankita");
 		userRepository.save(user);
 	        return true;
 	}
-@Override
-    public UserLoginRespDto userLoginDto(UserLoginDto userLoginDto) {
-		Optional<UserLoginRespDto> isValid = userRepository.findByEmailAndPassword(userLoginDto.getEmail(), userLoginDto.getPassword());
-       if (isValid.isPresent()) {
-			System.out.println("Login successful for: " + isValid.get().getEmail());
-			UserLoginRespDto logedUser=isValid.get();
-			return logedUser;
-		} else {
-			System.out.println("Invalid login attempt");
-			return null;
-		}
-	}
+
    
+@Override
+public UserLoginRespDto userLoginDto(UserLoginDto userLoginDto) {
+	Optional<UserLoginRespDto> isValid = userRepository.findByEmailAndPassword(
+		    userLoginDto.getEmail(),
+		    userLoginDto.getPassword()
+		);
+
+
+    if (isValid.isPresent()) {
+    	UserLoginRespDto logedUser = isValid.get();
+    	
+		return logedUser;
+	} else {
+		return null;
+	}
+}
 
 	
 	

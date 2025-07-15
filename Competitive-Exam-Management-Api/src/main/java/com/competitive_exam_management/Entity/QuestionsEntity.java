@@ -31,10 +31,22 @@ public class QuestionsEntity {
     @ManyToOne
     @JoinColumn(name = "exam_id", nullable = false)
     private ExamEntity exam;
+ 
+	@ManyToOne
+    @JoinColumn(name = "user_id", nullable = false)
+    private UserEntity userId;
 
     // Getters and Setters
 
-    public int getQuestionId() {
+    public UserEntity getUserId() {
+		return userId;
+	}
+
+	public void setUserId(UserEntity userId) {
+		this.userId = userId;
+	}
+
+	public int getQuestionId() {
         return questionId;
     }
 

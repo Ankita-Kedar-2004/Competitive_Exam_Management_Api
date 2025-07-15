@@ -27,5 +27,7 @@ public class QuestionsDto {
     private String correctAnswer;
 
     private int examId;
+    
+    private int userId; 
  
 }
