@@ -25,26 +25,17 @@ import jakarta.servlet.http.HttpSession;
 		@Autowired
 		  private  UserServiceImpl servicesImpl;
 		
-		
-		
-		  @PostMapping("/Sign_up")
+		@PostMapping("/Sign_up")
 		    public String SignUpPage(@RequestBody UserDto userDto) {
-			  
-		  boolean success=servicesImpl.userDto(userDto);
-			  System.out.println("Success");
-			  System.out.println(userDto.getContact_number());
+			  boolean success=servicesImpl.userDto(userDto);
 				return "signUp";
-		      
-		    }
-		  
+		  }
 		
-		  
-			@PostMapping("/login")
-			public UserLoginRespDto userLogin(@RequestBody UserLoginDto userLoginDto) {
-				UserLoginRespDto success = servicesImpl.userLoginDto(userLoginDto);
-				
-				return success;
-			}
 	
+		@PostMapping("/login")
+		public UserLoginRespDto userLogin(@RequestBody UserLoginDto userLoginDto) {
+		    UserLoginRespDto success = servicesImpl.userLoginDto(userLoginDto);
+		    return success;
+		}
 		
 	}

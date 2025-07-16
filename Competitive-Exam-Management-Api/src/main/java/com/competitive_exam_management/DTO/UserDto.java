@@ -1,7 +1,5 @@
 package com.competitive_exam_management.DTO;
 
-
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,6 +8,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class UserDto {
+	private int id;
 	private String username;
 	private String contact_number;
 	private String email;

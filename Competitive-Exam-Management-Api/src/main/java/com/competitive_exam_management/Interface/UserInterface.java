@@ -16,6 +16,7 @@ import jakarta.servlet.http.HttpSession;
 public interface UserInterface {
 	
  public boolean userDto(UserDto userDto);
+ 
  public UserLoginRespDto userLoginDto(UserLoginDto userLoginDto);
  
 }

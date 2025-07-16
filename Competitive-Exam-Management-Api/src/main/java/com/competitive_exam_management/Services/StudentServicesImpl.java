@@ -32,7 +32,7 @@ public class StudentServicesImpl implements StudentInterface{
 	
 	@Override
 	 public boolean studentRegistration(StudentDto studentDto) {
-		System.out.println(studentDto.getId());
+
 		    StudentEntity student = mapper.toEntity(studentDto); 
 		    UserEntity user = mapper.toEntity1(studentDto);
 		    userRepository.save(user); 
@@ -64,7 +64,6 @@ public class StudentServicesImpl implements StudentInterface{
 	    StudentEntity student = mapper.toEntity(studentDto); 
 	  
 	    UserEntity user = mapper.toEntity1(studentDto);
-	    System.out.println(user.getId());
 	    userRepository.save(user); 
 	    studentRepository.save(student);
 	    return true; 

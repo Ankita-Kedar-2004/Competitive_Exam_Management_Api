@@ -15,10 +15,15 @@ import com.competitive_exam_management.Entity.UserEntity;
 @Repository
 public interface UserRepository extends JpaRepository<UserEntity, Integer> {
 
-    
-    @Query("SELECT new com.competitive_exam_management.DTO.UserLoginRespDto(u.email, u.role) FROM UserEntity u WHERE u.email = :email AND u.password = :password")
-    Optional<UserLoginRespDto> findByEmailAndPassword(@Param("email") String email, @Param("password") String password);
+	@Query("SELECT new com.competitive_exam_management.DTO.UserLoginRespDto(u.id, u.email, u.role) " +
+		       "FROM UserEntity u WHERE u.email = :email AND u.password = :password")
+		Optional<UserLoginRespDto> findByEmailAndPassword(@Param("email") String email, 
+		                                                  @Param("password") String password);
 
 	void save(StudentEntity user);
 
+
+	
+
+	
 }
