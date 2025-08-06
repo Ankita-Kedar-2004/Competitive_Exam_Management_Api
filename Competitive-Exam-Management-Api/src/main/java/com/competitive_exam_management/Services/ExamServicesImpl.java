@@ -32,13 +32,7 @@ public class ExamServicesImpl implements ExamInterface {
 	    return true;
 	}
 
-	@Override
-	public List<ExamRespDto> getAllExamName() {
-		 List<ExamEntity> entities = examRepository.findAll();
-	        return entities.stream()
-	                       .map(mapper::toDto)
-	                       .collect(Collectors.toList());
-	}
+	
 
 	
 	@Override
@@ -56,6 +50,28 @@ public class ExamServicesImpl implements ExamInterface {
 		ExamEntity student = mapper.toEntity(examDto); 
 		examRepository.save(student);
 		    return true;
+	}
+
+	@Override
+	public int softDelete(int id) {
+	    int data =examRepository.softDelete(id);
+	    return 1;
+	}
+
+	@Override
+	public List<ExamRespDto> getAllInactiveExams() {
+		 List<ExamEntity> entities = examRepository.findAllInactiveStatus();
+	        return entities.stream()
+	                       .map(mapper::toDto)
+	                       .collect(Collectors.toList());
+	}
+
+	@Override
+	public List<ExamRespDto> getAllActiveExams() {
+		 List<ExamEntity> entities = examRepository.findAllActiveStatus();
+	        return entities.stream()
+	                       .map(mapper::toDto)
+	                       .collect(Collectors.toList());
 	}
 
 }

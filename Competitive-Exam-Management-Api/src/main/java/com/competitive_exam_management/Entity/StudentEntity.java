@@ -18,7 +18,7 @@ public class StudentEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
   
     @Column(name = "id")
-    private Integer  id;
+    private int  id;
    
 
 	@Column(name = "user_name")
@@ -39,12 +39,45 @@ public class StudentEntity {
     @Column(name = "passingYear")
     private int passingYear;
     
+    @Column(name="status")
+    private String status;
     public StudentEntity() {
     	
     }
     
-    public StudentEntity(int id, String name, String email, String password, String contactNumber, String qualification,
-			int passingYear, String collegeName, int examId) {
+  
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	
+
+
+	public int getId() {
+		return id;
+	}
+
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+
+
+
+	@Column(name = "college_name")
+    private String collegeName;
+    
+    @Column(name = "exam_id")
+    private int examId;
+
+	
+	public StudentEntity(int id, String name, String email, String password, String contactNumber,
+			String qualification, int passingYear, String status, String collegeName, int examId) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -53,23 +86,12 @@ public class StudentEntity {
 		this.contactNumber = contactNumber;
 		this.qualification = qualification;
 		this.passingYear = passingYear;
+		this.status = status;
 		this.collegeName = collegeName;
 		this.examId = examId;
 	}
 
-	@Column(name = "college_name")
-    private String collegeName;
-    
-    @Column(name = "exam_id")
-    private int examId;
 
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
 
 	public String getName() {
 		return name;

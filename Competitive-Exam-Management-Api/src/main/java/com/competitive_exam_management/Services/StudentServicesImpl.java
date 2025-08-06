@@ -43,7 +43,7 @@ public class StudentServicesImpl implements StudentInterface{
 	
 	@Override
 	public List<StudentRespDto> getAllStudents() {
-		 List<StudentEntity> entities = studentRepository.findAll();
+		 List<StudentEntity> entities = studentRepository.findAllActiveStatus();
 	        return entities.stream()
 	                       .map(mapper::toDto)
 	                       .collect(Collectors.toList());
@@ -70,8 +70,16 @@ public class StudentServicesImpl implements StudentInterface{
 	}
 
 
-	public boolean deleteById(int id) {
-	    studentRepository.deleteById(id);
-	    return true; 
+	public int softDelete(int id) {
+	    int data =studentRepository.softDelete(id);
+	    return 1; 
+	}
+
+
+	public List<StudentRespDto> getAllInactiveStudents() {
+		 List<StudentEntity> entities = studentRepository.findAllInactiveStatus();
+	        return entities.stream()
+	                       .map(mapper::toDto)
+	                       .collect(Collectors.toList());
 	}
 }

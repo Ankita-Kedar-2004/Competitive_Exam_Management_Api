@@ -11,5 +11,6 @@ public class ExamRespDto {
 	  private int examId;
 		private String examName;
 		private int ExamDuration;
+		 private String status;
 
 }

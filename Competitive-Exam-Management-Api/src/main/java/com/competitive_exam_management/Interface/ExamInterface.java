@@ -11,11 +11,15 @@ import com.competitive_exam_management.DTO.ExamRespDto;
 public interface ExamInterface {
 
 	  boolean registerExam(ExamDto examDto);
-
-	List<ExamRespDto> getAllExamName();
-
+	  
 	ExamRespDto getDataById(int id);
 
 	boolean examUpdate(ExamDto examDto);
+
+	int softDelete(int id);
+
+	List<ExamRespDto> getAllInactiveExams();
+
+	List<ExamRespDto> getAllActiveExams();
 
 }

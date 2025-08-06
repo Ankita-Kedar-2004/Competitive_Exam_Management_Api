@@ -38,6 +38,7 @@ public class StudentMapper {
 		        entity.setPassingYear(studentDto.getPassingYear());
 		        entity.setCollegeName(studentDto.getCollegeName());
 		        entity.setExamId(studentDto.getExamId());
+		        entity.setStatus(studentDto.getStatus());
 	           return entity;
 		}
 		
@@ -51,6 +52,7 @@ public class StudentMapper {
 		        dto.setCollegeName(entity.getCollegeName());
 		        dto.setContactNumber(entity.getContactNumber());
 		        dto.setExamId(entity.getExamId());
+		        dto.setStatus(entity.getStatus());
 		        
 		        return dto;
 		    }

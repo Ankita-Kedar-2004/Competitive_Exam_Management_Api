@@ -18,6 +18,9 @@ public class ExamEntity {
 	@Column(name="exam_time")
 	private int examTime;
 	
+	@Column(name="status")
+    private String status;
+	
 	public ExamEntity() {}
 
 	public int getExamId() {
@@ -44,12 +47,22 @@ public class ExamEntity {
 		this.examTime = examTime;
 	}
 
-	public ExamEntity(int examId, String examName, int examTime) {
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public ExamEntity(int examId, String examName, int examTime, String status) {
 		super();
 		this.examId = examId;
 		this.examName = examName;
 		this.examTime = examTime;
+		this.status = status;
 	}
+
 	
 	
 
