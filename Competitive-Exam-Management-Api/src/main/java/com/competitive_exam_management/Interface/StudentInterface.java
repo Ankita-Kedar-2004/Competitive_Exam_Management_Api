@@ -20,4 +20,6 @@ public interface StudentInterface {
 	public StudentRespDto getDataById(int id);
 	
 	public boolean studentUpdate(StudentDto studentDto);
+	
+	public int softDelete(int id) ;
 }
