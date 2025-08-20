@@ -48,6 +48,8 @@ public class ExamServicesImpl implements ExamInterface {
 	@Override
 	public boolean examUpdate(ExamDto examDto) {
 		ExamEntity student = mapper.toEntity(examDto); 
+		System.out.println("Hii");
+		System.out.println(examDto.getExamId());
 		examRepository.save(student);
 		    return true;
 	}

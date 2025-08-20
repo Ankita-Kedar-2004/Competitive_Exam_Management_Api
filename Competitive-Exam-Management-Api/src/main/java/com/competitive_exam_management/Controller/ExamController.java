@@ -17,12 +17,11 @@ import com.competitive_exam_management.DTO.StudentDto;
 import com.competitive_exam_management.DTO.StudentRespDto;
 import com.competitive_exam_management.Interface.ExamInterface;
 
-
-
 @RestController
 @RequestMapping("/exam")
 @CrossOrigin("*")
 public class ExamController {
+	
 	@Autowired
 	ExamInterface examInterface;
 
@@ -53,13 +52,13 @@ public class ExamController {
 	 @GetMapping("/exam_update/{id}")
 	   public ExamRespDto getdatabyid(@PathVariable int id) {
 		   ExamRespDto examRespDto=examInterface.getDataById(id);
-		   System.out.println(examRespDto.getExamId());
 		return examRespDto;
 }
 
 	 @PostMapping("/exam_update")
 	    public ExamDto StudentUpdate(@RequestBody ExamDto examDto) {
 		    boolean success=examInterface.examUpdate(examDto);
+		    System.out.println(examDto.getExamId());
 		 return examDto;
 	      
 	    }

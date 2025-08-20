@@ -5,7 +5,10 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
+import org.springframework.data.domain.Pageable; // ✅ Correct one
+
 
 import com.competitive_exam_management.DTO.ExamDto;
 import com.competitive_exam_management.DTO.ExamRespDto;
@@ -85,10 +88,12 @@ public class QuestionsServicesImpl  implements QuestionsInterface{
 	@Override
 	public boolean deletedatabyid(int id) {
 		 if (questionsRepository.existsById(id)) {
-		        questionsRepository.deleteById(id);
+		        questionsRepository.deleteById(id); 
 		        return true; }
 		return false;
 	}
 	
+	
+
 
 }
