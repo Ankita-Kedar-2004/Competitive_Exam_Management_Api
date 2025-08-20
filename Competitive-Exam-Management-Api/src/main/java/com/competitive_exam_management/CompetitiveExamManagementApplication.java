@@ -1,4 +1,4 @@
-package com.competitive_exam_management.Competitive_Exam_Management;
+package com.competitive_exam_management;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

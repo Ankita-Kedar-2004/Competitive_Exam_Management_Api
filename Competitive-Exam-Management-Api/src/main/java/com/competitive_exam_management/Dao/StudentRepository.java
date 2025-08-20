@@ -16,16 +16,18 @@ import jakarta.transaction.Transactional;
 public interface StudentRepository extends JpaRepository<StudentEntity, Integer> {
 	
 	  
-	    @Modifying
-	    @Transactional
-	    @Query("UPDATE StudentEntity s SET s.status = 'Inactive' WHERE s.id = :id")
-	    int softDelete(@Param("id") int id);
- 
-	    @Query("SELECT s FROM StudentEntity s WHERE s.status = 'Active'")
-	    List<StudentEntity> findAllActiveStatus();
-
-	    
-	    @Query("SELECT s FROM StudentEntity s WHERE s.status = 'Inactive'")
-		List<StudentEntity> findAllInactiveStatus();
 	
+	  @Modifying
+	  
+	  @Transactional
+	  
+	  @Query("UPDATE StudentEntity s SET s.status = 'Inactive' WHERE s.id = :id")
+	 int softDelete(@Param("id") int id);
+	 
+	 @Query("SELECT s FROM StudentEntity s WHERE s.status = 'Active'")
+	 List<StudentEntity> findAllActiveStatus();
+	 
+	 @Query("SELECT s FROM StudentEntity s WHERE s.status = 'Inactive'")
+	  List<StudentEntity> findAllInactiveStatus();
+	 
 }

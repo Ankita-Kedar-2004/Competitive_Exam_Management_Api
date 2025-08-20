@@ -65,7 +65,12 @@
       <artifactId>spring-boot-starter-test</artifactId>
       <scope>test</scope>
     </dependency>
-   
+
+   <!-- <dependency>
+    	<groupId>com.library</groupId>
+    	<artifactId>library-frontend</artifactId>
+    	<version>0.0.1-SNAPSHOT</version>
+    </dependency>-->
   </dependencies>
 
   <build>
