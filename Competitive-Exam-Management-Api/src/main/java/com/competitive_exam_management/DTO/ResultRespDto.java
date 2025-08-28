@@ -7,10 +7,10 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class ExamDto {
-	
-    private int examId;
-	private String examName;
-	private int ExamDuration;
-	private String status;
+public class ResultRespDto {
+private int result_id;
+private int user_id;
+private int exam_id;
+private int score;
+private int total;
 }

@@ -5,6 +5,7 @@ import org.springframework.stereotype.Component;
 import com.competitive_exam_management.DTO.StudentDto;
 import com.competitive_exam_management.DTO.UserDto;
 import com.competitive_exam_management.DTO.UserLoginDto;
+import com.competitive_exam_management.DTO.UserLoginRespDto;
 import com.competitive_exam_management.Entity.StudentEntity;
 import com.competitive_exam_management.Entity.UserEntity;
 
@@ -18,6 +19,19 @@ public class UserMapper {
         UserDto dto = new UserDto();
         dto.setUsername(user.getUsername());
         dto.setContact_number(user.getContact_number());
+        dto.setEmail(user.getEmail());
+        dto.setPassword(user.getPassword());
+        dto.setRole(user.getRole());
+        dto.setId(user.getId());
+       
+        return dto;
+    }
+    
+    public UserLoginRespDto toDto1(UserEntity user) {
+        if (user == null) {
+            return null;
+        }
+        UserLoginRespDto dto = new UserLoginRespDto();
         dto.setEmail(user.getEmail());
         dto.setPassword(user.getPassword());
         dto.setRole(user.getRole());

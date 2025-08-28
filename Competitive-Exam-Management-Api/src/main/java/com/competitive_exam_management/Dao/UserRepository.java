@@ -1,5 +1,6 @@
 package com.competitive_exam_management.Dao;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -16,10 +17,10 @@ import com.competitive_exam_management.Entity.UserEntity;
 public interface UserRepository extends JpaRepository<UserEntity, Integer> {
 
 	
-	 @Query("SELECT new com.competitive_exam_management.DTO.UserLoginRespDto(u.id, u.email, u.role) "
-	  + "FROM UserEntity u WHERE u.email = :email AND u.password = :password")
-	  Optional<UserLoginRespDto> findByEmailAndPassword(@Param("email") String
-	  email, @Param("password") String password);
+	@Query("SELECT u FROM UserEntity u WHERE u.email = :email AND u.password = :password")
+	Optional<UserEntity> findByEmailAndPassword(@Param("email") String email,
+	                                            @Param("password") String password);
+
 	 
 	  void save(StudentEntity user);
 	 

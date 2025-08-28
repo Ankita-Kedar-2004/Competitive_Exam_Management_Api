@@ -82,4 +82,19 @@ public class StudentServicesImpl implements StudentInterface{
 	                       .map(mapper::toDto)
 	                       .collect(Collectors.toList());
 	}
+
+
+	@Override
+	public StudentRespDto studentProfileData(String userEmail) {
+		 Optional<StudentEntity> data=studentRepository.findAllByEmail(userEmail);
+		  if(data.isPresent()) {
+			  StudentEntity student=data.get();
+			return  mapper.toDto(student);
+		  }
+		return null;
+		
+	}
+
+
+	
 }

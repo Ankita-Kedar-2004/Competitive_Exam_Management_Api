@@ -47,6 +47,7 @@ public class StudentMapper {
 		        dto.setId(entity.getId());
 		        dto.setName(entity.getName());
 		        dto.setEmail(entity.getEmail());
+		        dto.setPassword(entity.getPassword());
 		        dto.setQualification(entity.getQualification());
 		        dto.setPassingYear(entity.getPassingYear());
 		        dto.setCollegeName(entity.getCollegeName());
