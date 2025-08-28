@@ -11,6 +11,7 @@ public class StudentRespDto {
 	private String name;
     private String status;
     private String email;
+    private String password;
     private String qualification;
     private int passingYear;
     private String collegeName;

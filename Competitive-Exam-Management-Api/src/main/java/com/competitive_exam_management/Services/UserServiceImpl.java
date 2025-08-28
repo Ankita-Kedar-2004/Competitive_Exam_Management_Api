@@ -42,19 +42,17 @@ public class UserServiceImpl implements UserInterface {
    
 @Override
 public UserLoginRespDto userLoginDto(UserLoginDto userLoginDto) {
-	Optional<UserLoginRespDto> isValid = userRepository.findByEmailAndPassword(
-		    userLoginDto.getEmail(),
-		    userLoginDto.getPassword()
-		);
 
+    UserEntity isValid = userRepository.findByEmailAndPassword(
+            userLoginDto.getEmail(),
+            userLoginDto.getPassword()
+    ).orElse(null);
 
-    if (isValid.isPresent()) {
-    	UserLoginRespDto logedUser = isValid.get();
-    	
-		return logedUser;
-	} else {
-		return null;
-	}
+    if (isValid == null) {
+        return null;
+    }
+
+    return mapper.toDto1(isValid);
 }
 
 	

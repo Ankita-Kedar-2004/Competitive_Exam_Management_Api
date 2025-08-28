@@ -18,6 +18,7 @@ public class ExamMapper {
 	        entity.setExamId(examDto.getExamId());
 	        entity.setExamName(examDto.getExamName());
 	        entity.setExamTime(examDto.getExamDuration());
+	        entity.setStatus(examDto.getStatus());
 	        return entity;
 	    }
 	 
@@ -27,6 +28,7 @@ public class ExamMapper {
 	       dto.setExamId(entity.getExamId());
 	        dto.setExamName(entity.getExamName());
 	        dto.setExamDuration(entity.getExamTime());
+	        dto.setStatus(entity.getStatus());
 	        return dto;
 	 
 	        

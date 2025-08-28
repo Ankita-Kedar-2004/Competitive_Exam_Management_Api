@@ -12,5 +12,6 @@ public class UserLoginDto {
 	private int id;
     private String email;
     private String password;
+    private String role;
  
 }

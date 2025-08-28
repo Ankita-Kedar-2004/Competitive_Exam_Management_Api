@@ -17,9 +17,13 @@ public interface StudentInterface {
 	
 	public List<StudentRespDto> getAllStudents();
 	
+	public List<StudentRespDto> getAllInactiveStudents();
+	
 	public StudentRespDto getDataById(int id);
 	
 	public boolean studentUpdate(StudentDto studentDto);
 	
 	public int softDelete(int id) ;
+
+	public StudentRespDto studentProfileData(String userEmail);
 }

@@ -21,7 +21,7 @@ public class UserEntity {
    @Column(name = "user_name")
     private String username;
 
-    @Column(name = "email")
+    @Column(name = "email" ,unique = true, nullable = false)
     private String email;
 
     @Column(name = "password")
@@ -71,4 +71,10 @@ public class UserEntity {
 	}
 	public UserEntity() {
     }
+	
+	public UserEntity orElse(Object object) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
 }

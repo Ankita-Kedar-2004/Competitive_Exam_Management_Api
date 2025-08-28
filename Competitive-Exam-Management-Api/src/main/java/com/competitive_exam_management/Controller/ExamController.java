@@ -27,7 +27,7 @@ public class ExamController {
 
 	@PostMapping("/registerExam")
 	public String registerExam(@RequestBody ExamDto examDto ) {
-		boolean exam = examInterface.registerExam(examDto);
+		System.out.println(examDto.getStatus());
 		return "done";
 		}
 	
@@ -58,7 +58,6 @@ public class ExamController {
 	 @PostMapping("/exam_update")
 	    public ExamDto StudentUpdate(@RequestBody ExamDto examDto) {
 		    boolean success=examInterface.examUpdate(examDto);
-		    System.out.println(examDto.getExamId());
 		 return examDto;
 	      
 	    }
