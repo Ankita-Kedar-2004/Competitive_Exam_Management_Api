@@ -23,6 +23,7 @@ public class QuestionsMapper {
          question.setCorrectAnswer(dto.getCorrectAnswer());
          question.setExam(exam);
          question.setUserId(userId);
+         question.setUser(dto.getUser());
          return question;
     }
     

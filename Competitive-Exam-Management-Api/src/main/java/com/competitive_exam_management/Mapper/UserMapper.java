@@ -81,6 +81,7 @@ public class UserMapper {
 	        entity.setPassingYear(studentDto.getPassingYear());
 	        entity.setCollegeName(studentDto.getCollegeName());
 	        entity.setExamId(studentDto.getExamId());
+	        entity.setUser(studentDto.getUser());
            return entity;
 	}
 	
@@ -97,6 +98,7 @@ public class UserMapper {
 	        dto.setPassingYear(user.getPassingYear());
 	        dto.setCollegeName(user.getCollegeName());
 	        dto.setExamId(user.getExamId());
+	        dto.setUser(user.getUser());
 	        return dto;
 	    }
 

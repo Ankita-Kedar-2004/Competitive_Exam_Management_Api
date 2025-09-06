@@ -9,4 +9,5 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class AssignQuestionReqDto {
  private int assignQuestionId;
+ private String user;
 }

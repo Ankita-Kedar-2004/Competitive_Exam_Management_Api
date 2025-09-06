@@ -20,7 +20,6 @@ public class StudentMapper {
 	        entity.setEmail(studentDto.getEmail());
 	        entity.setPassword(studentDto.getPassword());
 	        entity.setRole("Student");
-	     
 	        return entity;
 	    }
 	    
@@ -39,6 +38,8 @@ public class StudentMapper {
 		        entity.setCollegeName(studentDto.getCollegeName());
 		        entity.setExamId(studentDto.getExamId());
 		        entity.setStatus(studentDto.getStatus());
+		        entity.setUser(studentDto.getUser());
+		       
 	           return entity;
 		}
 		
@@ -54,7 +55,7 @@ public class StudentMapper {
 		        dto.setContactNumber(entity.getContactNumber());
 		        dto.setExamId(entity.getExamId());
 		        dto.setStatus(entity.getStatus());
-		        
+		        entity.setUser(entity.getUser());
 		        return dto;
 		    }
 		

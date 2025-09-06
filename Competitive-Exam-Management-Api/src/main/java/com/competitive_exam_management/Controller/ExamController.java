@@ -27,8 +27,9 @@ public class ExamController {
 
 	@PostMapping("/registerExam")
 	public String registerExam(@RequestBody ExamDto examDto ) {
-		System.out.println(examDto.getStatus());
+		boolean exam = examInterface.registerExam(examDto);
 		return "done";
+		
 		}
 	
 	@GetMapping("/Exam_view/{status}")

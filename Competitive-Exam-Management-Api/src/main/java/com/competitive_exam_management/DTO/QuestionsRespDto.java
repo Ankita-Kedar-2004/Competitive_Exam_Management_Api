@@ -19,5 +19,6 @@ public class QuestionsRespDto {
 	    private String correctAnswer;
 
 	    private String examName;
+	    private String user;
 	 
 }

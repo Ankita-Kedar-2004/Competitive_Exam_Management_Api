@@ -25,7 +25,7 @@ public class ResultController {
 	private ResultInterface resultInterface;
 	
 	 @PostMapping("/evaluateExam/{studentId}/{examId}")
-	    public int evaluateExam(
+	    public ResultRespDto evaluateExam(
 	            @PathVariable int studentId,      
 	            @PathVariable int examId,       
 	            @RequestBody Map<String, String> answers) {  
@@ -33,7 +33,7 @@ public class ResultController {
 	        for (Map.Entry<String, String> entry : answers.entrySet()) {
 	            finalAnswers.put(Integer.parseInt(entry.getKey()), entry.getValue());
 	        }
-           int result=resultInterface.evaluateExam(studentId, examId, finalAnswers);
+           ResultRespDto result=resultInterface.evaluateExam(studentId, examId, finalAnswers);
 	        return result;
 	    }
 	 

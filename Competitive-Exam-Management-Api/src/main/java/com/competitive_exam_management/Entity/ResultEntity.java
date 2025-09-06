@@ -27,8 +27,10 @@ public class ResultEntity {
 
     @Column(name = "score")
     private int score;
+    
+    
 
-    // --- Getters and Setters ---
+	// --- Getters and Setters ---
     public int getResultId() {
         return resultId;
     }
