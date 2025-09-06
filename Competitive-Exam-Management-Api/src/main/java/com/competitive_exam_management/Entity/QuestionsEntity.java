@@ -28,7 +28,16 @@ public class QuestionsEntity {
     @Column(name="correct_answer")
     private String correctAnswer;
 
-    @ManyToOne
+
+	public String getUser() {
+		return user;
+	}
+
+	public void setUser(String user) {
+		this.user = user;
+	}
+
+	@ManyToOne
     @JoinColumn(name = "exam_id", nullable = false)
     private ExamEntity exam;
  
@@ -36,6 +45,10 @@ public class QuestionsEntity {
     @JoinColumn(name = "user_id", nullable = false)
     private UserEntity userId;
 
+
+	@Column(name="user")
+    private String user;
+	
     // Getters and Setters
 
     public UserEntity getUserId() {

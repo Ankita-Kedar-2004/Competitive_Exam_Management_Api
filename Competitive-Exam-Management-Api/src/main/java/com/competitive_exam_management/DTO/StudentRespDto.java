@@ -18,6 +18,7 @@ public class StudentRespDto {
     private String contactNumber;
     private int examId;
     private int id;
+    private String user;
     
    
 }

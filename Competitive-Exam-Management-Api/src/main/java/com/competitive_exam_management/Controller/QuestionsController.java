@@ -50,6 +50,7 @@ public class QuestionsController {
 }
 	
 	 @PostMapping("/questions_update_data1")
-	 public ResponseEntity<QuestionsDto> questionsUpdate(@RequestBody QuestionsDto questionsDto) {
- return ResponseEntity.ok(questionsDto); 	 }
+	 public QuestionsRespDto questionsUpdate(@RequestBody QuestionsDto questionsDto) {
+		   QuestionsRespDto delete= questionsInterface.questionsUpdate(questionsDto); 
+ return delete; 	 }
 }

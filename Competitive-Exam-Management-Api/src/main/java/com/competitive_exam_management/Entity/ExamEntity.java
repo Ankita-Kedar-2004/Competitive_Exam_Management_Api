@@ -21,6 +21,16 @@ public class ExamEntity {
 	@Column(name="status")
     private String status;
 	
+	@Column(name="user")
+    private String user;
+	public String getUser() {
+		return user;
+	}
+
+	public void setUser(String user) {
+		this.user = user;
+	}
+
 	public ExamEntity() {}
 
 	public int getExamId() {
@@ -62,6 +72,8 @@ public class ExamEntity {
 		this.examTime = examTime;
 		this.status = status;
 	}
+
+
 
 	
 	

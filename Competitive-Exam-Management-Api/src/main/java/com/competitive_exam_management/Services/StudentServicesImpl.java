@@ -35,6 +35,9 @@ public class StudentServicesImpl implements StudentInterface{
 
 		    StudentEntity student = mapper.toEntity(studentDto); 
 		    UserEntity user = mapper.toEntity1(studentDto);
+		    System.out.println("Hii");
+		    System.out.println(studentDto.getUser()+"  :User");
+		    System.out.println(student.getUser());
 		    userRepository.save(user); 
 		    studentRepository.save(student);
 		    return true;                                      

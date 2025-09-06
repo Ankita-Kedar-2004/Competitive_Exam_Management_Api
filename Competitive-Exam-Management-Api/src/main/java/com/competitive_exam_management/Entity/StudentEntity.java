@@ -41,7 +41,30 @@ public class StudentEntity {
     
     @Column(name="status")
     private String status;
-    public StudentEntity() {
+    
+
+	@Column(name = "college_name")
+    private String collegeName;
+    
+	
+    @Column(name = "exam_id")
+    private int examId;
+    
+    @Column(name = "user")
+    private String user;
+    
+    
+    public String getUser() {
+		return user;
+	}
+
+
+	public void setUser(String user) {
+		this.user = user;
+	}
+
+
+	public StudentEntity() {
     	
     }
     
@@ -69,11 +92,6 @@ public class StudentEntity {
 
 
 
-	@Column(name = "college_name")
-    private String collegeName;
-    
-    @Column(name = "exam_id")
-    private int examId;
 
 	
 	public StudentEntity(int id, String name, String email, String password, String contactNumber,
